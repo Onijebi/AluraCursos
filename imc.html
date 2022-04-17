@@ -1,0 +1,100 @@
+<meta charset="utf-8">
+
+<h1>Calculo del IMC</h1>
+
+<script>
+    var estdo = 1.80;
+    var pesdo = 78;
+    var estcar = 1.83;
+    var pescar = 86;
+    var estgla = 1.60;
+    var pesgla = 120;
+    var imc;
+
+    function saltarlinea()
+    {
+        document.write("<br>")
+        document.write("<br>")
+    }
+
+    function imprimir(contenido)
+    {
+        document.write(contenido)
+        saltarlinea();
+    }
+
+    function calcularimc(peso,altura)
+    {
+        return peso / (altura*altura);
+    }
+    function resultado(imc)
+    {
+        if (imc < 18.5)
+        {
+            imprimir("<h2>Bajo peso</h2>")
+            saltarlinea();
+        }
+        else if (18.5 < imc && imc < 24.9)
+        {
+            imprimir("<h2>Peso normal</h2>")
+            saltarlinea();
+        }
+        else if (25<imc && imc < 29.9)
+        {
+            imprimir("<h2>Sobrepeso</h2>")
+            saltarlinea();
+        }
+        else if (30<imc)
+        {
+            imprimir("<h2>Obesidad</h2>")
+            saltarlinea();
+        }
+    }
+
+    imprimir("A continuacion veremos calcularemos el peso de 3 chicos, Dono, Carlos y Glaki. Adicionalmente calcularemos su IMC")
+
+
+    imprimir("Dono mide " + estdo + " metros y pesa " + pesdo + " kilogramos.")
+
+    var resultadoIMC = calcularimc(pesdo, estdo);
+    imprimir("El IMC de Dono es: " + resultadoIMC);
+
+    imprimir("Dono tiene:")
+
+    resultado(resultadoIMC);
+
+    imprimir("Carlos mide " + estcar + " metros y pesa " + pescar + " kilogramos.")
+
+    var resultadoIMC = calcularimc(pescar, estcar);
+    imprimir("El IMC de Carlos es: " + resultadoIMC);
+
+    imprimir("Carlos tiene:")
+
+    resultado(resultadoIMC);
+
+
+    imprimir("Glaki mide " + estgla + " metros y pesa " + pesgla + " kilogramos.")
+
+    var resultadoIMC = calcularimc(pesgla, estgla);
+    imprimir("El IMC de Glaki es: " + resultadoIMC);
+
+    imprimir("Glaki tiene:")
+
+    resultado(resultadoIMC);
+
+    imprimir("Estos son sus datos ingresados:")
+
+    var estuse = prompt("Cual es su estatura en metros?")
+
+    var pesuse = prompt("Cual es su peso en kilogramos?")
+
+    imprimir("Usted mide " + estuse + " metros y pesa " + pesuse + " kilogramos")
+
+    var resultadoIMC = calcularimc(pesuse, estuse);
+    imprimir("El IMC del usted es: " + resultadoIMC);
+
+    imprimir("Usted tiene:")
+
+    resultado(resultadoIMC);
+
+</script>
